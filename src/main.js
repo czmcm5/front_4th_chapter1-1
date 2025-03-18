@@ -239,3 +239,20 @@ document.body.innerHTML = `
   ${LoginPage()}
   ${ErrorPage()}
 `;
+
+// 1. 라우팅 구현
+function renderPage() {
+  const pathname = window.location.pathname;
+
+  if (pathname === "/profile") {
+    document.body.innerHTML = `${ProfilePage()}`;
+  } else if (pathname === "/login") {
+    document.body.innerHTML = `${LoginPage()}`;
+  } else if (pathname === "/") {
+    document.body.innerHTML = `${MainPage()}`;
+  } else {
+    document.body.innerHTML = `${ErrorPage()}`;
+  }
+}
+
+renderPage();
